@@ -1,0 +1,443 @@
+[INFO  tini (1)] Spawned child process '/opt/oai-gnb/bin/entrypoint.sh' with pid '7'
+==================================
+/proc/sys/kernel/core_pattern=|/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -F%F -- %E
+==================================
+== Configuration file:
+Active_gNBs = ( "gNB-OAI");
+# Asn1_verbosity, choice in: none, info, annoying
+Asn1_verbosity = "none";
+
+nfapi = "AERIAL";
+pdcp-drop = 1;
+
+gNBs =
+(
+ {
+    ////////// Identification parameters:
+    gNB_ID    =  0xe00;
+    gNB_name  =  "gNB-OAI";
+
+    // Tracking area code, 0x0000 and 0xfffe are reserved values
+#    tracking_area_code  =  1;
+#    plmn_list = ({ mcc = 001; mnc = 01; mnc_length = 2; snssaiList = ( { sst = 1; }); });
+     tracking_area_code  =  12594;
+     plmn_list = ({
+                   mcc = 001;
+                   mnc = 01;
+                   mnc_length = 2;
+                   snssaiList = (
+                     {
+                       sst = 1;
+                       sd = 0x19CDE1;
+                     }
+                   );
+                   });
+
+    nr_cellid = 51L;
+
+    ////////// Physical parameters:
+
+    pdsch_AntennaPorts_XP = 2;
+    pdsch_AntennaPorts_N1 = 2;
+    pusch_AntennaPorts    = 2;
+    do_CSIRS              = 1;
+    do_SRS                = 0;
+    min_rxtxtime          = 3;
+
+    servingCellConfigCommon = (
+    {
+ #spCellConfigCommon
+
+      physCellId                                                    = 51;
+
+#  downlinkConfigCommon
+    #frequencyInfoDL
+      # center frequency = 3750 Mhz
+      # this is 3700.86 + 133*12*30e3 = 3748.8 MHz (5G NR GSCN: 8019)
+      absoluteFrequencySSB                                          = 643296;  #649920;
+      #652860; #should be 649920
+      dl_frequencyBand                                              = 78;
+      # this is 3700.86 MHz
+      dl_absoluteFrequencyPointA                                    = 640000;  #646724;
+      #scs-SpecificCarrierList
+        dl_offstToCarrier                                           = 0;
+# subcarrierSpacing
+# 0=kHz15, 1=kHz30, 2=kHz60, 3=kHz120
+        dl_subcarrierSpacing                                        = 1;
+        dl_carrierBandwidth                                         = 273;
+     #initialDownlinkBWP
+      #genericParameters
+       # this is RBstart=0,L=162 (275*(275-L+1))+(274-RBstart))
+       initialDLBWPlocationAndBandwidth                             = 1099;
+       #
+# subcarrierSpacing
+# 0=kHz15, 1=kHz30, 2=kHz60, 3=kHz120
+        initialDLBWPsubcarrierSpacing                               = 1;
+      #pdcch-ConfigCommon
+        initialDLBWPcontrolResourceSetZero                          = 12;
+        initialDLBWPsearchSpaceZero                                 = 0;
+
+  #uplinkConfigCommon
+     #frequencyInfoUL
+      ul_frequencyBand                                              = 78;
+      #scs-SpecificCarrierList
+      ul_offstToCarrier                                             = 0;
+# subcarrierSpacing
+# 0=kHz15, 1=kHz30, 2=kHz60, 3=kHz120
+      ul_subcarrierSpacing                                          = 1;
+      ul_carrierBandwidth                                           = 273;
+      pMax                                                          = 20;
+     #initialUplinkBWP
+      #genericParameters
+        initialULBWPlocationAndBandwidth                            = 1099;
+# subcarrierSpacing
+# 0=kHz15, 1=kHz30, 2=kHz60, 3=kHz120
+        initialULBWPsubcarrierSpacing                               = 1;
+      #rach-ConfigCommon
+        #rach-ConfigGeneric
+          prach_ConfigurationIndex                                  = 159;# testMAC 158; OAI gNB 98
+#prach_msg1_FDM
+#0 = one, 1=two, 2=four, 3=eight
+          prach_msg1_FDM                                            = 0;
+          prach_msg1_FrequencyStart                                 = 0;
+          zeroCorrelationZoneConfig                                 = 12;
+          preambleReceivedTargetPower                               = -96;
+#preamblTransMax (0...10) = (3,4,5,6,7,8,10,20,50,100,200)
+          preambleTransMax                                          = 6;
+#powerRampingStep
+# 0=dB0,1=dB2,2=dB4,3=dB6
+        powerRampingStep                                            = 1;
+#ssb_perRACH_OccasionAndCB_PreamblesPerSSB_PR
+#1=oneeighth,2=onefourth,3=half,4=one,5=two,6=four,7=eight,8=sixteen
+        ssb_perRACH_OccasionAndCB_PreamblesPerSSB_PR                = 4;
+#one (0..15) 4,8,12,16,...60,64
+        ssb_perRACH_OccasionAndCB_PreamblesPerSSB                   = 15;
+#ra_ContentionResolutionTimer
+#(0..7) 8,16,24,32,40,48,56,64
+        ra_ContentionResolutionTimer                                = 7;
+        rsrp_ThresholdSSB                                           = 19;
+#prach-RootSequenceIndex_PR
+#1 = 839, 2 = 139
+        prach_RootSequenceIndex_PR                                  = 2;
+        prach_RootSequenceIndex                                     = 1;
+        # SCS for msg1, can only be 15 for 30 kHz < 6 GHz, takes precendence over the one derived from prach-ConfigIndex
+        #
+        msg1_SubcarrierSpacing                                      = 1,
+# restrictedSetConfig
+# 0=unrestricted, 1=restricted type A, 2=restricted type B
+        restrictedSetConfig                                         = 0,
+
+        msg3_DeltaPreamble                                          = 1;
+        p0_NominalWithGrant                                         = -90;
+
+# pucch-ConfigCommon setup :
+# pucchGroupHopping
+# 0 = neither, 1= group hopping, 2=sequence hopping
+        pucchGroupHopping                                           = 0;
+        hoppingId                                                   = 40;
+        p0_nominal                                                  = -90;
+
+      ssb_PositionsInBurst_Bitmap                                   = 1;
+
+# ssb_periodicityServingCell
+# 0 = ms5, 1=ms10, 2=ms20, 3=ms40, 4=ms80, 5=ms160, 6=spare2, 7=spare1
+      ssb_periodicityServingCell                                    = 2;
+
+# dmrs_TypeA_position
+# 0 = pos2, 1 = pos3
+      dmrs_TypeA_Position                                           = 0;
+
+# subcarrierSpacing
+# 0=kHz15, 1=kHz30, 2=kHz60, 3=kHz120
+      subcarrierSpacing                                             = 1;
+
+
+  #tdd-UL-DL-ConfigurationCommon
+# subcarrierSpacing
+# 0=kHz15, 1=kHz30, 2=kHz60, 3=kHz120
+      referenceSubcarrierSpacing                                    = 1;
+      # pattern1
+      # dl_UL_TransmissionPeriodicity
+      # 0=ms0p5, 1=ms0p625, 2=ms1, 3=ms1p25, 4=ms2, 5=ms2p5, 6=ms5, 7=ms10
+      dl_UL_TransmissionPeriodicity                                 = 6;
+      nrofDownlinkSlots                                             = 6;
+      nrofDownlinkSymbols                                           = 10;
+      nrofUplinkSlots                                               = 3;
+      nrofUplinkSymbols                                             = 0;
+
+      ssPBCH_BlockPower                                             = -34;
+  }
+
+  );
+
+
+    # ------- SCTP definitions
+    SCTP :
+    {
+        # Number of streams to use in input/output
+        SCTP_INSTREAMS  = 2;
+        SCTP_OUTSTREAMS = 2;
+    };
+
+
+    ////////// AMF parameters:
+    amf_ip_address      = ({ ipv4       = "192.168.70.132"; });
+
+    NETWORK_INTERFACES :
+    {
+        GNB_IPV4_ADDRESS_FOR_NG_AMF              = "192.168.70.129/24";
+        GNB_IPV4_ADDRESS_FOR_NGU                 = "192.168.70.129/24";
+        GNB_PORT_FOR_S1U                         = 2152; # Spec 2152
+    };
+
+  }
+);
+
+MACRLCs = (
+{
+  num_cc           = 1;
+
+  tr_s_preference  = "aerial";
+  tr_s_shm_prefix  = "nvipc";
+  tr_s_poll_core   = 18;
+  remote_s_address = "127.0.0.1"; // pnf addr [!]
+  local_s_address  = "127.0.0.2"; // vnf addr
+  local_s_portc    = 50001; // vnf p5 port
+  remote_s_portc   = 50000; // pnf p5 port [!]
+  local_s_portd    = 50011; // vnf p7 port [!]
+  remote_s_portd   = 50010; // pnf p7 port [!]
+  tr_n_preference             = "local_RRC";
+  pusch_FailureThres          = 10;
+  pusch_TargetSNRx10          = 280; # 150;
+  pucch_TargetSNRx10          = 100; #200;
+  ulsch_max_frame_inactivity  = 10;
+  dl_max_mcs = 27;
+  ul_max_mcs = 27;
+  pusch_RSSI_Threshold        = -180;
+  #min_grant_prb = 261;
+}
+);
+
+
+security = {
+  # preferred ciphering algorithms
+  # the first one of the list that an UE supports in chosen
+  # valid values: nea0, nea1, nea2, nea3
+  ciphering_algorithms = ( "nea0" );
+
+  # preferred integrity algorithms
+  # the first one of the list that an UE supports in chosen
+  # valid values: nia0, nia1, nia2, nia3
+  integrity_algorithms = ( "nia2", "nia0" );
+
+  # setting 'drb_ciphering' to "no" disables ciphering for DRBs, no matter
+  # what 'ciphering_algorithms' configures; same thing for 'drb_integrity'
+  drb_ciphering = "yes";
+  drb_integrity = "no";
+};
+
+log_config :
+{
+  global_log_level                      ="info";
+  hw_log_level                          ="info";
+  phy_log_level                         ="info";
+  mac_log_level                         ="info";
+  rlc_log_level                         ="info";
+  pdcp_log_level                        ="info";
+  rrc_log_level                         ="info";
+  ngap_log_level                        ="debug";
+  f1ap_log_level                        ="debug";
+};
+==================================
+== Load USRP binaries
+==================================
+== Starting gNB soft modem
+Additional option(s): --log_config.global_log_options level,nocolor,utc_time
+/opt/oai-gnb/bin/nr-softmodem -O /opt/oai-gnb/etc/gnb.conf --log_config.global_log_options level,nocolor,utc_time
+CMDLINE: "/opt/oai-gnb/bin/nr-softmodem" "-O" "/opt/oai-gnb/etc/gnb.conf" "--log_config.global_log_options" "level,nocolor,utc_time" 
+[CONFIG] function config_libconfig_init returned 0
+[08:56:59.324754] [UTIL]   I running in SA mode (no --phy-test, --do-ra, --nsa option present)
+[08:57:00.325140] [OPT]    I OPT disabled
+[08:57:00.325154] [HW]     I Version: Branch: ARC1.7_integration Abrev. Hash: dee2b8ccc7 Date: Tue Dec 16 15:50:51 2025 +0000
+[08:57:00.325169] [GNB_APP] I Initialized RAN Context: RC.nb_nr_inst = 1, RC.nb_nr_macrlc_inst = 1, RC.nb_nr_L1_inst = 0, RC.nb_RU = 0, RC.nb_nr_CC[0] = 0
+[08:57:00.325261] [GNB_APP] I pdsch_AntennaPorts N1 2 N2 1 XP 2 pusch_AntennaPorts 2
+[08:57:00.325265] [GNB_APP] E RU information not present in config file. Assuming physical antenna ports equal to logical antenna ports 4
+[08:57:00.325267] [GNB_APP] I minTXRXTIME 3
+[08:57:00.325268] [GNB_APP] I SIB1 TDA 1
+[08:57:00.325269] [GNB_APP] I CSI-RS 1, SRS 0, report type 0 (ssb_rsrp), 256 QAM may be on, delta_MCS off, maxMIMO_Layers -1, HARQ feedback enabled, num DLHARQ:16, num ULHARQ:16
+[08:57:00.325272] [GNB_APP] I No RedCap configuration found
+[08:57:00.325274] [GNB_APP] I No PTRS configuration found
+[08:57:00.325277] [GNB_APP] I sr_ProhibitTimer 0, sr_TransMax 64, sr_ProhibitTimer_v1700 0, t300 400, t301 400, t310 2000, n310 10, t311 3000, n311 1, t319 400
+[08:57:00.325279] [NR_MAC] I Candidates per PDCCH aggregation level on UESS: L1: 0, L2: 2, L4: 0, L8: 0, L16: 0
+[08:57:00.325374] [RRC]    I Read in ServingCellConfigCommon (PhysCellId 51, ABSFREQSSB 643296, DLBand 78, ABSFREQPOINTA 640000, DLBW 273,RACH_TargetReceivedPower -96
+[08:57:00.325381] [RRC]    I absoluteFrequencySSB 643296 corresponds to 3649440000 Hz
+[08:57:00.325394] [NR_MAC] I TDD period index = 6, based on the sum of dl_UL_TransmissionPeriodicity from Pattern1 (5.000000 ms) and Pattern2 (0.000000 ms): Total = 5.000000 ms
+[08:57:00.325399] [NR_RRC] I mixed slot has 0 UL symbols, cannot create mixed slot TDA
+[08:57:00.325451] [UTIL]   I threadCreate() for MAC_STATS: creating thread with affinity ffffffff, priority 2
+[08:57:00.325900] [NR_MAC] I PUSCH Target 280, PUCCH Target 100, PUCCH Failure 10, PUSCH Failure 10
+[08:57:00.325906] [GNB_APP] I Configuring VNF for Aerial connection with prefix (null)
+[08:57:00.325928] [NR_PHY] I Copying 0 blacklisted PRB to L1 context
+[08:57:00.325991] [NR_MAC] I Set TX antenna number to 4, Set RX antenna number to 2 (num ssb 1: 80000000,0)
+[08:57:00.325996] [NR_MAC] I TDD period index = 6, based on the sum of dl_UL_TransmissionPeriodicity from Pattern1 (5.000000 ms) and Pattern2 (0.000000 ms): Total = 5.000000 ms
+[08:57:00.326004] [NR_MAC] I Set TDD configuration period to: 7 DL slots, 3 UL slots, 10 slots per period (NR_TDD_UL_DL_Pattern is 6 DL slots, 3 UL slots, 10 DL symbols, 0 UL symbols)
+[08:57:00.326007] [NR_MAC] I Configured 1 TDD patterns (total slots: pattern1 = 10, pattern2 = 0)
+[08:57:00.326008] [NR_PHY] I Set TDD Period Configuration: 2 periods per frame, 20 slots to be configured (7 DL, 3 UL)
+[08:57:00.326013] [NR_PHY] I TDD period configuration: slot 0 is DOWNLINK
+[08:57:00.326016] [NR_PHY] I TDD period configuration: slot 1 is DOWNLINK
+[08:57:00.326016] [NR_PHY] I TDD period configuration: slot 2 is DOWNLINK
+[08:57:00.326018] [NR_PHY] I TDD period configuration: slot 3 is DOWNLINK
+[08:57:00.326020] [NR_PHY] I TDD period configuration: slot 4 is DOWNLINK
+[08:57:00.326024] [NR_PHY] I TDD period configuration: slot 5 is DOWNLINK
+[08:57:00.326025] [NR_PHY] I TDD period configuration: slot 6 is FLEXIBLE: DDDDDDDDDDFFFF
+[08:57:00.326030] [NR_PHY] I TDD period configuration: slot 7 is UPLINK
+[08:57:00.326032] [NR_PHY] I TDD period configuration: slot 8 is UPLINK
+[08:57:00.326033] [NR_PHY] I TDD period configuration: slot 9 is UPLINK
+[08:57:00.326041] [NR_MAC] I Command line parameters for OAI UE: -C 3649140000 -r 273 --numerology 1 --band 78 --ssb 1528 
+[08:57:00.326047] [NR_MAC] I TDA index 0: start 0 length 13 k2 3
+[08:57:00.326121] [NR_RRC] I SIB1 freq: offsetToPointA 254
+[08:57:00.326173] [GNB_APP] I F1AP: gNB idx 0 gNB_DU_id 3584, gNB_DU_name gNB-OAI, TAC 12594 MCC/MNC/length 1/1/2 cellID 51
+[08:57:00.326176] [GNB_APP] I ngran_DU: Configuring Cell 0 for TDD
+[08:57:00.326352] [GNB_APP] I SDAP layer is disabled
+[08:57:00.326354] [GNB_APP] I Data Radio Bearer count 1
+[08:57:00.327191] [GNB_APP] I Parsed IPv4 address for NG AMF: 192.168.70.129
+[08:57:00.327206] [UTIL]   I threadCreate() for TASK_SCTP: creating thread with affinity ffffffff, priority 50
+[08:57:00.327516] [X2AP]   I X2AP is disabled.
+[08:57:00.327532] [UTIL]   I threadCreate() for TASK_NGAP: creating thread with affinity ffffffff, priority 50
+[08:57:00.327788] [NGAP]   D Starting NGAP layer
+[08:57:00.327819] [NGAP]   I Registered new gNB[0] and macro gNB id 3584
+[08:57:00.327824] [NGAP]   I [gNB 0] check the amf registration state
+[08:57:00.327851] [UTIL]   I threadCreate() for TASK_RRC_GNB: creating thread with affinity ffffffff, priority 50
+[08:57:00.328140] [NR_RRC] I Entering main loop of NR_RRC message task
+[08:57:00.328189] [GTPU]   I Configuring GTPu
+[08:57:00.328198] [GTPU]   I SA mode 
+[08:57:00.328201] [GTPU]   I Configuring GTPu address : 192.168.70.129, port : 2152
+[08:57:00.328206] [GTPU]   I Initializing UDP for local address 192.168.70.129 with port 2152
+[08:57:00.328219] [GTPU]   I Created gtpu instance id: 91
+[08:57:00.328224] [UTIL]   I threadCreate() for GTPrx_91: creating thread with affinity ffffffff, priority 50
+[08:57:00.328501] [NR_RRC] I Accepting new CU-UP ID 3584 name gNB-OAI (assoc_id -1)
+[08:57:00.328512] [UTIL]   I threadCreate() for TASK_GNB_APP: creating thread with affinity ffffffff, priority 50
+[08:57:00.328836] [UTIL]   I threadCreate() for TASK_GTPV1_U: creating thread with affinity ffffffff, priority 50
+[08:57:00.328922] [NR_RRC] I Received F1 Setup Request from gNB_DU 3584 (gNB-OAI) on assoc_id -1
+[08:57:00.328981] [NR_RRC] I Accepting DU 3584 (gNB-OAI), sending F1 Setup Response
+[08:57:00.328984] [NR_RRC] I DU uses RRC version 17.3.0
+[08:57:00.328993] [MAC]    I received F1 Setup Response from CU (null)
+[08:57:00.328996] [MAC]    I CU uses RRC version 17.3.0
+[08:57:00.329001] [MAC]    I Clearing the DU's UE states before, if any.
+[08:57:00.329006] [NR_RRC] I cell PLMN 001.01 Cell ID 51 is in service
+[08:57:00.329012] [MAC]    I received gNB-DU configuration update acknowledge
+[08:57:00.330183] [UTIL]   I threadCreate() for time source realtime: creating thread with affinity ffffffff, priority 2
+[08:57:00.330446] [UTIL]   I time manager configuration: [time source: reatime] [mode: standalone] [server IP: 127.0.0.1} [server port: 7374] (server IP/port not used)
+[08:57:00.380509] [NFAPI_VNF] I nvIPC_Init: creating IPC interface with prefix nvipc
+[C]: [nvipc][core 17 ] share event_fd thread info: sched_policy=0 sched_priority=0
+[C]: [nvipc] Waiting for nvipc server to start ...
+[C]: [nvipc] Waiting for nvipc server to start ...
+[C]: [nvipc] Waiting for nvipc server to start ...
+[C]: [nvipc] Waiting for nvipc server to start ...
+[C]: [nvipc] nvipc unix socket client connected
+[C]: [nvipc] Received peer event_fd: 94
+[C]: Share event_fd succeed: efd_tx=94, efd_rx=92
+[C]: [nvipc][core 17 ] nvipc unix socket exit
+[C]: Start initialize nvipc client
+[C]: nv_ipc_debug_open: prefix=nvipc fapi_type=1 nvipc_version=25.3.0 OK
+[C]: shm_ipc_open: forward_enable=0 fw_max_msg_buf_count=1365 fw_max_data_buf_count=341
+[C]: create_shm_nv_ipc_interface: OK. buf_size: cpu_msg=15000 cpu_data=576000 cpu_large=4096000
+[08:57:04.385641] [NFAPI_VNF] I nvIPC_Init: create IPC interface successful
+[08:57:05.385702] [UTIL]   I threadCreate() for vnf_nvipc_aerial: creating thread with affinity 12, priority 50
+[VNF] Sent NFAPI_VNF_CONFIG_REQ num_tlv:34
+TYPE <CTRL-C> TO TERMINATE
+1732797.781660 [W] 4135383392: nr_error_ind_cb: [VNF] Received NFAPI_NR_PHY_MSG_TYPE_ERROR_INDICATION idx:1 phy_id:0
+1732797.781671 [W] 4135383392: nr_error_ind_cb: [VNF] Previous message 0x82 resulted in an error on the PNF 
+1732797.781672 [W] 4135383392: nr_error_ind_cb: [VNF] Received error code 0x34 (AERIAL_ERROR_CODE_MSG_LATE_SLOT_ERR)
+[08:57:08.920630] [NFAPI_VNF] E 
+============================================================================
+sfn slot doesn't match unpacked one! L2->L1 0.0  vs L1->L2 0.4  
+============================================================================
+[08:57:10.198631] [NR_MAC] I Frame.Slot 128.0
+
+[08:57:11.478631] [NR_MAC] I Frame.Slot 256.0
+
+[08:57:12.758630] [NR_MAC] I Frame.Slot 384.0
+
+[08:57:14.038602] [NR_MAC] I Frame.Slot 512.0
+
+[08:57:15.318602] [NR_MAC] I Frame.Slot 640.0
+
+[08:57:16.598631] [NR_MAC] I Frame.Slot 768.0
+
+[08:57:17.878632] [NR_MAC] I Frame.Slot 896.0
+
+[08:57:19.158630] [NR_MAC] I Frame.Slot 0.0
+
+[08:57:20.438631] [NR_MAC] I Frame.Slot 128.0
+
+[08:57:21.718633] [NR_MAC] I Frame.Slot 256.0
+
+[08:57:22.998631] [NR_MAC] I Frame.Slot 384.0
+
+[08:57:24.278632] [NR_MAC] I Frame.Slot 512.0
+
+[08:57:25.558631] [NR_MAC] I Frame.Slot 640.0
+
+[08:57:26.838602] [NR_MAC] I Frame.Slot 768.0
+
+[08:57:28.118630] [NR_MAC] I Frame.Slot 896.0
+
+[08:57:29.398597] [NR_MAC] I Frame.Slot 0.0
+
+[08:57:30.678630] [NR_MAC] I Frame.Slot 128.0
+
+[08:57:31.958630] [NR_MAC] I Frame.Slot 256.0
+
+[08:57:33.238630] [NR_MAC] I Frame.Slot 384.0
+
+[08:57:34.518630] [NR_MAC] I Frame.Slot 512.0
+
+[08:57:35.798630] [NR_MAC] I Frame.Slot 640.0
+
+[08:57:37.078599] [NR_MAC] I Frame.Slot 768.0
+
+[08:57:38.358648] [NR_MAC] I Frame.Slot 896.0
+
+[08:57:39.638600] [NR_MAC] I Frame.Slot 0.0
+
+[08:57:40.918610] [NR_MAC] I Frame.Slot 128.0
+
+[08:57:42.198660] [NR_MAC] I Frame.Slot 256.0
+
+[08:57:43.478631] [NR_MAC] I Frame.Slot 384.0
+
+[08:57:44.758600] [NR_MAC] I Frame.Slot 512.0
+
+[08:57:46.038629] [NR_MAC] I Frame.Slot 640.0
+
+[08:57:47.318629] [NR_MAC] I Frame.Slot 768.0
+
+[08:57:48.598601] [NR_MAC] I Frame.Slot 896.0
+
+[08:57:49.878507] [NR_MAC] I Frame.Slot 0.0
+
+[08:57:51.158508] [NR_MAC] I Frame.Slot 128.0
+
+[08:57:52.438508] [NR_MAC] I Frame.Slot 256.0
+
+[08:57:53.718635] [NR_MAC] I Frame.Slot 384.0
+
+[08:57:54.998629] [NR_MAC] I Frame.Slot 512.0
+
+[08:57:56.278600] [NR_MAC] I Frame.Slot 640.0
+
+[08:57:57.558631] [NR_MAC] I Frame.Slot 768.0
+
+[08:57:58.838631] [NR_MAC] I Frame.Slot 896.0
+
+[08:58:00.118630] [NR_MAC] I Frame.Slot 0.0
+
+[08:58:01.398629] [NR_MAC] I Frame.Slot 128.0
+
+[08:58:02.678643] [NR_MAC] I Frame.Slot 256.0
+
+[08:58:03.958630] [NR_MAC] I Frame.Slot 384.0
+
+
+** Caught SIGTERM, shutting down
+Returned from ITTI signal handler

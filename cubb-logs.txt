@@ -1,0 +1,623 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.9.1
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+Cannot find MPS control daemon process
+NVIDIA-P4242
+Started cuphycontroller on CPU core 0
+08:56:59.625665 CON phy_init 0 [CTL.SCF] Config file: /opt/nvidia/cuBB/cuPHY-CP/cuphycontroller/config/cuphycontroller_P5G_FXN_GH.yaml
+08:56:59.626204 CON phy_init 0 [CTL.SCF] low_priority_core=10
+08:56:59.626241 CON phy_init 0 [APP.CONFIG] Current TAI offset: 0s
+08:56:59.626350 CON phy_init 0 [NVLOG.CPP] Using /opt/nvidia/cuBB/cuPHY/nvlog/config/nvlog_config.yaml for nvlog configuration
+08:56:59.636968 CON phy_init 0 [NVLOG.CPP] AERIAL_LOG_PATH set to /var/log/aerial
+
+08:56:59.636973 CON phy_init 0 [NVLOG.CPP] Output log file path /var/log/aerial/phy.log
+Aerial metrics backend address: 127.0.0.1:8081
+08:56:59.648891 WRN phy_init 0 [CTL.YAML] YAML invalid key: ul_warmup_frame_count Using default value of 8 to YAML_PARAM_UL_WARMUP_FRAME_COUNT
+08:56:59.648946 WRN phy_init 0 [CTL.YAML] YAML invalid key: pusch_weighted_average_cfo Using default value of 0 to PUSCH-WEIGHTED-AVERAGE-CFO
+08:56:59.648992 WRN phy_init 0 [CTL.YAML] YAML invalid key: enable_tx_notification Using default value of 0 for YAML_PARAM_ENABLE_TX_NOTIFICATION
+08:56:59.649199 CON phy_init 0 [CTL.YAML] cell_id 1 nic_index :0
+08:56:59.649291 CON phy_init 0 [CTL.YAML] ta4_min_ns_srs/ta4_max_ns_srs not set in config file, using default ta4_min_ns_srs = 621 us and ta4_max_ns_srs = 1831 us
+08:56:59.649298 CON phy_init 0 [CTL.YAML] t1a_min_cp_dl_ns/t1a_max_cp_dl_ns not set in config file, using default t1a_min_cp_dl_ns = 419 us and t1a_max_cp_dl_ns = 669 us
+08:56:59.649304 CON phy_init 0 [CTL.YAML] t1a_min_cp_ul_ns not set in config file, using default of 285 us
+08:56:59.649356 CON phy_init 0 [CTL.YAML] Num Slots: 8
+08:56:59.649357 CON phy_init 0 [CTL.YAML] Enable UL cuPHY Graphs: 1
+08:56:59.649357 CON phy_init 0 [CTL.YAML] Enable DL cuPHY Graphs: 1
+08:56:59.649358 CON phy_init 0 [CTL.YAML] Accurate TX scheduling clock resolution (ns): 500
+08:56:59.649358 CON phy_init 0 [CTL.YAML] DPDK core: 10
+08:56:59.649358 CON phy_init 0 [CTL.YAML] Prometheus core: -1
+08:56:59.649358 CON phy_init 0 [CTL.YAML] UL cores: 
+08:56:59.649359 CON phy_init 0 [CTL.YAML] 	- 5
+08:56:59.649359 CON phy_init 0 [CTL.YAML] 	- 6
+08:56:59.649359 CON phy_init 0 [CTL.YAML] DL cores: 
+08:56:59.649359 CON phy_init 0 [CTL.YAML] 	- 7
+08:56:59.649359 CON phy_init 0 [CTL.YAML] 	- 8
+08:56:59.649360 CON phy_init 0 [CTL.YAML] 	- 9
+08:56:59.649360 CON phy_init 0 [CTL.YAML] Debug worker: -1
+08:56:59.649360 CON phy_init 0 [CTL.YAML] Data Lake core: -1
+08:56:59.649361 CON phy_init 0 [CTL.YAML] SRS starting Section ID: 3072
+08:56:59.649361 CON phy_init 0 [CTL.YAML] PRACH starting Section ID: 2048
+08:56:59.649361 CON phy_init 0 [CTL.YAML] USE GREEN CONTEXTS: 0
+08:56:59.649361 CON phy_init 0 [CTL.YAML] USE BATCHED MEMCPY: 1
+08:56:59.649361 CON phy_init 0 [CTL.YAML] MPS SM PUSCH: 40
+08:56:59.649361 CON phy_init 0 [CTL.YAML] MPS SM PUCCH: 2
+08:56:59.649362 CON phy_init 0 [CTL.YAML] MPS SM PRACH: 2
+08:56:59.649362 CON phy_init 0 [CTL.YAML] MPS SM UL ORDER: 20
+08:56:59.649362 CON phy_init 0 [CTL.YAML] MPS SM PDSCH: 42
+08:56:59.649362 CON phy_init 0 [CTL.YAML] MPS SM PDCCH: 10
+08:56:59.649362 CON phy_init 0 [CTL.YAML] MPS SM PBCH: 2
+08:56:59.649362 CON phy_init 0 [CTL.YAML] MPS SM GPU_COMMS: 16
+08:56:59.649362 CON phy_init 0 [CTL.YAML] MPS SM SRS: 16
+08:56:59.649362 CON phy_init 0 [CTL.YAML] UL Order Kernel Mode: 0
+08:56:59.649367 CON phy_init 0 [CTL.YAML] PDSCH fallback: 0
+08:56:59.649367 CON phy_init 0 [CTL.YAML] Massive MIMO enable: 0
+08:56:59.649367 CON phy_init 0 [CTL.YAML] mMIMO_enable feature 0
+08:56:59.649367 CON phy_init 0 [CTL.YAML] Enable SRS : 1
+08:56:59.649368 CON phy_init 0 [CTL.YAML] ul_order_timeout_gpu_log_enable: 1
+08:56:59.649368 CON phy_init 0 [CTL.YAML] ue_mode: 0
+08:56:59.649368 CON phy_init 0 [CTL.YAML] Aggr Obj Non-availability threshold: 5
+08:56:59.649368 CON phy_init 0 [CTL.YAML] sendCPlane_timing_error_th_ns: 0
+08:56:59.649369 CON phy_init 0 [CTL.YAML] pusch_aggr_per_ctx: 3
+08:56:59.649369 CON phy_init 0 [CTL.YAML] prach_aggr_per_ctx: 2
+08:56:59.649369 CON phy_init 0 [CTL.YAML] pucch_aggr_per_ctx: 4
+08:56:59.649370 CON phy_init 0 [CTL.YAML] srs_aggr_per_ctx: 3
+08:56:59.649370 CON phy_init 0 [CTL.YAML] max_harq_pools: 384
+08:56:59.649370 CON phy_init 0 [CTL.YAML] max_harq_tx_count_bundled: 10
+08:56:59.649370 CON phy_init 0 [CTL.YAML] max_harq_tx_count_non_bundled: 4
+08:56:59.649370 CON phy_init 0 [CTL.YAML] ul_input_buffer_per_cell: 10
+08:56:59.649371 CON phy_init 0 [CTL.YAML] ul_input_buffer_per_cell_srs: 6
+08:56:59.649371 CON phy_init 0 [CTL.YAML] max_ru_unhealthy_ul_slots: 100
+08:56:59.649371 CON phy_init 0 [CTL.YAML] srs_chest_algo_type: 0
+08:56:59.649371 CON phy_init 0 [CTL.YAML] srs_chest_tol2_normalization_algo_type: 1
+08:56:59.649372 CON phy_init 0 [CTL.YAML] srs_chest_tol2_constant_scaler: 32768
+08:56:59.649372 CON phy_init 0 [CTL.YAML] bfw_power_normalization_alg_selector: 1
+08:56:59.649372 CON phy_init 0 [CTL.YAML] bfw_beta_prescaler: 16384
+08:56:59.649373 CON phy_init 0 [CTL.YAML] total_num_srs_chest_buffers: 6144
+08:56:59.649373 CON phy_init 0 [CTL.YAML] send_static_bfw_wt_all_cplane: 1
+08:56:59.649374 CON phy_init 0 [CTL.YAML] ul_pcap_capture_enable: 0
+08:56:59.649374 CON phy_init 0 [CTL.YAML] ul_pcap_capture_thread_cpu_affinity: 250
+08:56:59.649374 CON phy_init 0 [CTL.YAML] ul_pcap_capture_thread_sched_priority: 0
+08:56:59.649374 CON phy_init 0 [CTL.YAML] pcap_logger_ul_cplane_enable: 0
+08:56:59.649374 CON phy_init 0 [CTL.YAML] pcap_logger_dl_cplane_enable: 0
+08:56:59.649374 CON phy_init 0 [CTL.YAML] pcap_logger_thread_cpu_affinity: 10
+08:56:59.649375 CON phy_init 0 [CTL.YAML] pcap_logger_thread_sched_prio: 95
+08:56:59.649375 CON phy_init 0 [CTL.YAML] pcap_logger_file_save_dir: ./
+08:56:59.649376 CON phy_init 0 [CTL.YAML] static_beam_id_start: 1
+08:56:59.649376 CON phy_init 0 [CTL.YAML] static_beam_id_end: 16527
+08:56:59.649376 CON phy_init 0 [CTL.YAML] dynamic_beam_id_start: 16528
+08:56:59.649377 CON phy_init 0 [CTL.YAML] dynamic_beam_id_end: 32767
+08:56:59.649377 CON phy_init 0 [CTL.YAML] ul_order_timeout_gpu_log_enable: 1
+08:56:59.649377 CON phy_init 0 [CTL.YAML] pusch_workCancelMode: 2
+08:56:59.649377 CON phy_init 0 [CTL.YAML] GPU-initiated comms DL: 1
+08:56:59.649378 CON phy_init 0 [CTL.YAML] GPU-initiated comms (via CPU): 1
+08:56:59.649378 CON phy_init 0 [CTL.YAML] CPU-initiated comms : 0
+08:56:59.649378 CON phy_init 0 [CTL.YAML] Cell group: 1
+08:56:59.649378 CON phy_init 0 [CTL.YAML] Cell group num: 1
+08:56:59.649379 CON phy_init 0 [CTL.YAML] puxchPolarDcdrListSz: 8
+08:56:59.649379 CON phy_init 0 [CTL.YAML] split_ul_cuda_streams: 0
+08:56:59.649379 CON phy_init 0 [CTL.YAML] serialize_pucch_pusch: 0
+08:56:59.649379 CON phy_init 0 [CTL.YAML] bfw_c_plane_chaining_mode: 2
+08:56:59.649380 CON phy_init 0 [CTL.YAML] fh_stats_dump_cpu_core: -1
+08:56:59.649380 CON phy_init 0 [CTL.YAML] fix_beta_dl: 0
+08:56:59.649380 CON phy_init 0 [CTL.YAML] pdump_client_thread: -1
+08:56:59.649380 CON phy_init 0 [CTL.YAML] profiler_sec: 0
+08:56:59.649381 CON phy_init 0 [CTL.YAML] datalake_address: localhost
+08:56:59.649381 CON phy_init 0 [CTL.YAML] dpdk_file_prefix: cuphycontroller
+08:56:59.649381 CON phy_init 0 [CTL.YAML] puschrxChestFactorySettingsFilename: 
+08:56:59.649381 CON phy_init 0 [CTL.YAML] accu_tx_sched_disable: 0
+08:56:59.649382 CON phy_init 0 [CTL.YAML] cplane_disable: 0
+08:56:59.649382 CON phy_init 0 [CTL.YAML] disable_empw: 0
+08:56:59.649382 CON phy_init 0 [CTL.YAML] dlc_alloc_cplane_bfw_txq: 0
+08:56:59.649383 CON phy_init 0 [CTL.YAML] dlc_bfw_enable_divide_per_cell: 0
+08:56:59.649383 CON phy_init 0 [CTL.YAML] dpdk_verbose_logs: 0
+08:56:59.649383 CON phy_init 0 [CTL.YAML] enable_cpu_task_tracing: 0
+08:56:59.649383 CON phy_init 0 [CTL.YAML] enable_dl_cqe_tracing: 0
+08:56:59.649383 CON phy_init 0 [CTL.YAML] enable_l1_param_sanity_check: 0
+08:56:59.649384 CON phy_init 0 [CTL.YAML] enable_ok_tb: 0
+08:56:59.649384 CON phy_init 0 [CTL.YAML] enable_prepare_tracing: 0
+08:56:59.649384 CON phy_init 0 [CTL.YAML] mCh_segment_proc_enable: 0
+08:56:59.649385 CON phy_init 0 [CTL.YAML] pmu_metrics: 0
+08:56:59.649385 CON phy_init 0 [CTL.YAML] puschCfo: 1
+08:56:59.649385 CON phy_init 0 [CTL.YAML] puschDftSOfdm: 0
+08:56:59.649385 CON phy_init 0 [CTL.YAML] puschEnablePerPrgChEst: 0
+08:56:59.649386 CON phy_init 0 [CTL.YAML] puschRssi: 1
+08:56:59.649386 CON phy_init 0 [CTL.YAML] puschSelectChEstAlgo: 1
+08:56:59.649386 CON phy_init 0 [CTL.YAML] puschSelectEqCoeffAlgo: 3
+08:56:59.649386 CON phy_init 0 [CTL.YAML] puschSinr: 2
+08:56:59.649387 CON phy_init 0 [CTL.YAML] puschTbSizeCheck: 1
+08:56:59.649387 CON phy_init 0 [CTL.YAML] puschTdi: 1
+08:56:59.649387 CON phy_init 0 [CTL.YAML] puschTo: 1
+08:56:59.649387 CON phy_init 0 [CTL.YAML] pusch_deviceGraphLaunchEn: 1
+08:56:59.649388 CON phy_init 0 [CTL.YAML] ulc_alloc_cplane_bfw_txq: 1
+08:56:59.649388 CON phy_init 0 [CTL.YAML] ulc_bfw_enable_divide_per_cell: 0
+08:56:59.649389 CON phy_init 0 [CTL.YAML] ul_rx_pkt_tracing_level: 0
+08:56:59.649389 CON phy_init 0 [CTL.YAML] ul_rx_pkt_tracing_level_srs: 0
+08:56:59.649389 CON phy_init 0 [CTL.YAML] ul_warmup_frame_count: 8
+08:56:59.649389 CON phy_init 0 [CTL.YAML] forcedNumCsi2Bits: 0
+08:56:59.649390 CON phy_init 0 [CTL.YAML] pusch_waitTimeOutPostEarlyHarqUs: 3000
+08:56:59.649390 CON phy_init 0 [CTL.YAML] pusch_waitTimeOutPreEarlyHarqUs: 3000
+08:56:59.649390 CON phy_init 0 [CTL.YAML] validation: 0
+08:56:59.649390 CON phy_init 0 [CTL.YAML] cqe_trace_slot_mask: 196800
+08:56:59.649390 CON phy_init 0 [CTL.YAML] datalake_samples: 1000000
+08:56:59.649391 CON phy_init 0 [CTL.YAML] num_ok_tb_slot: 0
+08:56:59.649391 CON phy_init 0 [CTL.YAML] pusch_nMaxLdpcHetConfigs: 32
+08:56:59.649391 CON phy_init 0 [CTL.YAML] sendCPlane_dlbfw_backoff_th_ns: 300000
+08:56:59.649392 CON phy_init 0 [CTL.YAML] sendCPlane_ulbfw_backoff_th_ns: 300000
+08:56:59.649392 CON phy_init 0 [CTL.YAML] ul_order_max_rx_pkts: 512
+08:56:59.649392 CON phy_init 0 [CTL.YAML] ul_order_rx_pkts_timeout_ns: 100000
+08:56:59.649393 CON phy_init 0 [CTL.YAML] ul_order_timeout_cpu_ns: 8000000
+08:56:59.649394 CON phy_init 0 [CTL.YAML] ul_order_timeout_gpu_ns: 3000000
+08:56:59.649394 CON phy_init 0 [CTL.YAML] ul_order_timeout_gpu_srs_ns: 5200000
+08:56:59.649394 CON phy_init 0 [CTL.YAML] ul_order_timeout_log_interval_ns: 1000000000
+08:56:59.649395 CON phy_init 0 [CTL.YAML] ul_srs_aggr3_task_launch_offset_ns: 500000
+08:56:59.649395 CON phy_init 0 [CTL.YAML] workers_sched_priority: 95
+08:56:59.649396 CON phy_init 0 [CTL.YAML] cqe_trace_cell_mask: 1
+08:56:59.649396 CON phy_init 0 [CTL.YAML] Number of Cell Configs: 1
+08:56:59.649396 CON phy_init 0 [CTL.YAML] L2Adapter config file: /opt/nvidia/cuBB/cuPHY-CP/cuphycontroller/config/l2_adapter_config_P5G_GH.yaml
+08:56:59.649397 CON phy_init 0 [CTL.YAML] Cell name: O-RU 0
+08:56:59.649397 CON phy_init 0 [CTL.YAML] 	MU: 1
+08:56:59.649397 CON phy_init 0 [CTL.YAML] 	ID: 1
+08:56:59.649397 CON phy_init 0 [CTL.YAML] Number of MPlane Configs: 1
+08:56:59.649398 CON phy_init 0 [CTL.YAML] 	Mplane ID: 1
+08:56:59.649398 CON phy_init 0 [CTL.YAML] 	VLAN ID: 2
+08:56:59.649398 CON phy_init 0 [CTL.YAML] 	Source Eth Address: 00:00:00:00:00:00
+08:56:59.649399 CON phy_init 0 [CTL.YAML] 	Destination Eth Address: 6c:ad:ad:00:0e:40
+08:56:59.649399 CON phy_init 0 [CTL.YAML] 	NIC port: 0000:01:00.0
+08:56:59.649400 CON phy_init 0 [CTL.YAML] 	RU Type: 1
+08:56:59.649400 CON phy_init 0 [CTL.YAML] 	U-plane TXQs: 1
+08:56:59.649400 CON phy_init 0 [CTL.YAML] 	DL compression method: 1
+08:56:59.649401 CON phy_init 0 [CTL.YAML] 	DL iq bit width: 9
+08:56:59.649401 CON phy_init 0 [CTL.YAML] 	UL compression method: 1
+08:56:59.649401 CON phy_init 0 [CTL.YAML] 	UL iq bit width: 9
+08:56:59.649402 CON phy_init 0 [CTL.YAML] 
+08:56:59.649402 CON phy_init 0 [CTL.YAML] 	Flow list SSB/PBCH: 
+08:56:59.649402 CON phy_init 0 [CTL.YAML] 		0
+08:56:59.649403 CON phy_init 0 [CTL.YAML] 		1
+08:56:59.649403 CON phy_init 0 [CTL.YAML] 		2
+08:56:59.649403 CON phy_init 0 [CTL.YAML] 		3
+08:56:59.649403 CON phy_init 0 [CTL.YAML] 	Flow list PDCCH: 
+08:56:59.649404 CON phy_init 0 [CTL.YAML] 		0
+08:56:59.649404 CON phy_init 0 [CTL.YAML] 		1
+08:56:59.649404 CON phy_init 0 [CTL.YAML] 		2
+08:56:59.649404 CON phy_init 0 [CTL.YAML] 		3
+08:56:59.649405 CON phy_init 0 [CTL.YAML] 	Flow list PDSCH: 
+08:56:59.649405 CON phy_init 0 [CTL.YAML] 		0
+08:56:59.649405 CON phy_init 0 [CTL.YAML] 		1
+08:56:59.649405 CON phy_init 0 [CTL.YAML] 		2
+08:56:59.649405 CON phy_init 0 [CTL.YAML] 		3
+08:56:59.649405 CON phy_init 0 [CTL.YAML] 	Flow list CSIRS: 
+08:56:59.649406 CON phy_init 0 [CTL.YAML] 		0
+08:56:59.649406 CON phy_init 0 [CTL.YAML] 		1
+08:56:59.649407 CON phy_init 0 [CTL.YAML] 		2
+08:56:59.649407 CON phy_init 0 [CTL.YAML] 		3
+08:56:59.649407 CON phy_init 0 [CTL.YAML] 	Flow list PUSCH: 
+08:56:59.649407 CON phy_init 0 [CTL.YAML] 		0
+08:56:59.649408 CON phy_init 0 [CTL.YAML] 		1
+08:56:59.649408 CON phy_init 0 [CTL.YAML] 		2
+08:56:59.649408 CON phy_init 0 [CTL.YAML] 		3
+08:56:59.649408 CON phy_init 0 [CTL.YAML] 	Flow list PUCCH: 
+08:56:59.649409 CON phy_init 0 [CTL.YAML] 		0
+08:56:59.649409 CON phy_init 0 [CTL.YAML] 		1
+08:56:59.649409 CON phy_init 0 [CTL.YAML] 		2
+08:56:59.649409 CON phy_init 0 [CTL.YAML] 		3
+08:56:59.649410 CON phy_init 0 [CTL.YAML] 	Flow list SRS: 
+08:56:59.649410 CON phy_init 0 [CTL.YAML] 		8
+08:56:59.649411 CON phy_init 0 [CTL.YAML] 		9
+08:56:59.649411 CON phy_init 0 [CTL.YAML] 		10
+08:56:59.649411 CON phy_init 0 [CTL.YAML] 		11
+08:56:59.649411 CON phy_init 0 [CTL.YAML] 	Flow list PRACH: 
+08:56:59.649412 CON phy_init 0 [CTL.YAML] 		4
+08:56:59.649412 CON phy_init 0 [CTL.YAML] 		5
+08:56:59.649412 CON phy_init 0 [CTL.YAML] 		6
+08:56:59.649412 CON phy_init 0 [CTL.YAML] 		7
+08:56:59.649412 CON phy_init 0 [CTL.YAML] 	PUSCH TV: /opt/nvidia/cuBB/testVectors/cuPhyChEstCoeffs.h5
+08:56:59.649413 CON phy_init 0 [CTL.YAML] 	SRS TV: /opt/nvidia/cuBB/testVectors/cuPhyChEstCoeffs.h5
+08:56:59.649413 CON phy_init 0 [CTL.YAML] 	Section_3 time offset: 58369
+08:56:59.649413 CON phy_init 0 [CTL.YAML] 	nMaxRxAnt: 4
+08:56:59.649414 CON phy_init 0 [CTL.YAML] 	PUSCH PRBs Stride: 273
+08:56:59.649414 CON phy_init 0 [CTL.YAML] 	PRACH PRBs Stride: 12
+08:56:59.649414 CON phy_init 0 [CTL.YAML] 	SRS PRBs Stride: 273
+08:56:59.649414 CON phy_init 0 [CTL.YAML] 	PUSCH nMaxPrb: 273
+08:56:59.649415 CON phy_init 0 [CTL.YAML] 	PUSCH nMaxRx: 4
+08:56:59.649415 CON phy_init 0 [CTL.YAML] 	UL Gain Calibration: 78.68
+08:56:59.649415 CON phy_init 0 [CTL.YAML] 	Lower guard bw: 845
+08:56:59.939731 CON phy_init 0 [CTL.SCF] Network interface for PCIe address 0000:01:00.0 : aerial02
+08:56:59.939808 CON phy_init 0 [APP.UTILS]           PHC clock: 1774515406.16050670
+08:56:59.939822 CON phy_init 0 [APP.UTILS]           CLOCK_TAI: 1774515419.939813984
+08:56:59.939822 CON phy_init 0 [APP.UTILS]      CLOCK_REALTIME: 1774515419.939813936
+08:56:59.939822 CON phy_init 0 [APP.UTILS] TAI/REALTIME offset: 0 seconds
+08:56:59.945275 CON phy_init 0 [DRV.CTX] CUDA_DEVICE_MAX_CONNECTIONS 8
+08:56:59.945276 CON phy_init 0 [DRV.CTX] use_green_contexts 0
+EAL: Detected CPU lcores: 20
+EAL: Detected NUMA nodes: 1
+EAL: Detected shared linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/cuphycontroller/mp_socket
+EAL: Selected IOVA mode 'VA'
+INFO: Fronthaul::doca_gpu_setup: cuda_device_ids.size() = 1, cuda_device_ids_for_compute.size() = 1
+[2026-03-26 08:57:02:274162][2095646784][DOCA][INF][doca_log.cpp:633] DOCA version 3.2.1025
+08:57:02.274223 CON phy_init 0 [DRV.FH] Dynamic beam id start: 16528, end: 32767, num of beam ids per slots: 2192, number of consecutive slots with unique of beam ids: 7 
+EAL: Probe PCI driver: mlx5_pci (15b3:1021) device: 0000:01:00.0 (socket -1)
+PCAP_LOGGER Initialized
+mlx5_net: Dynamic flex parser is not supported for device 0000:01:00.0.
+mlx5_net: Dynamic flex parser is not supported for device 0000:01:00.0.
+mlx5_net: Dynamic flex parser is not supported for device 0000:01:00.0.
+mlx5_net: Dynamic flex parser is not supported for device 0000:01:00.0.
+mlx5_net: Dynamic flex parser is not supported for device 0000:01:00.0.
+mlx5_net: Dynamic flex parser is not supported for device 0000:01:00.0.
+mlx5_net: Dynamic flex parser is not supported for device 0000:01:00.0.
+mlx5_net: Dynamic flex parser is not supported for device 0000:01:00.0.
+mlx5_net: Dynamic flex parser is not supported for device 0000:01:00.0.
+mlx5_net: Dynamic flex parser is not supported for device 0000:01:00.0.
+mlx5_net: Dynamic flex parser is not supported for device 0000:01:00.0.
+mlx5_net: Dynamic flex parser is not supported for device 0000:01:00.0.
+08:57:03.062219 CON phy_init 0 [FH.PEER] Doca sem created!: sem_in gpu_addr 0xfa3cc3480000 cpu_addr 0x5738e11eea0
+08:57:03.062328 WRN phy_init 0 [FH.PEER] eCPRI parser not supported on NIC 0000:01:00.0, retrying without eCPRI
+08:57:03.071495 WRN phy_init 0 [FH.PEER] eCPRI parser not supported on NIC 0000:01:00.0, retrying without eCPRI
+08:57:03.071539 WRN phy_init 0 [FH.PEER] eCPRI parser not supported on NIC 0000:01:00.0, retrying without eCPRI
+08:57:03.071561 WRN phy_init 0 [FH.PEER] eCPRI parser not supported on NIC 0000:01:00.0, retrying without eCPRI
+08:57:03.071581 WRN phy_init 0 [FH.PEER] eCPRI parser not supported on NIC 0000:01:00.0, retrying without eCPRI
+08:57:03.071599 WRN phy_init 0 [FH.PEER] eCPRI parser not supported on NIC 0000:01:00.0, retrying without eCPRI
+08:57:03.071615 WRN phy_init 0 [FH.PEER] eCPRI parser not supported on NIC 0000:01:00.0, retrying without eCPRI
+08:57:03.071631 WRN phy_init 0 [FH.PEER] eCPRI parser not supported on NIC 0000:01:00.0, retrying without eCPRI
+08:57:03.071648 WRN phy_init 0 [FH.PEER] eCPRI parser not supported on NIC 0000:01:00.0, retrying without eCPRI
+08:57:03.074031 WRN phy_init 0 [FH.PEER] eCPRI parser not supported on NIC 0000:01:00.0, retrying without eCPRI
+08:57:03.074074 WRN phy_init 0 [FH.PEER] eCPRI parser not supported on NIC 0000:01:00.0, retrying without eCPRI
+08:57:03.074097 WRN phy_init 0 [FH.PEER] eCPRI parser not supported on NIC 0000:01:00.0, retrying without eCPRI
+mlx5_common: Fail to create MR for address (0xfa2700000000)
+mlx5_common: Device 0000:01:00.0 unable to DMA map
+08:57:03.115756 ERR phy_init 0 [AERIAL_ORAN_FH_EVENT] [FH.LIB] Exception! Failed to DMA map addr 0xfa2700000000 for NIC 0000:01:00.0: Operation not permitted
+08:57:03.115765 ERR phy_init 0 [AERIAL_ORAN_FH_EVENT] [DRV.FH] aerial_fh::register_memory error
+08:57:03.115766 ERR phy_init 0 [AERIAL_CUPHYDRV_API_EVENT] [DRV.CTX] registerMem error
+gRPC Server listening on 0.0.0.0:50051
+08:57:03.553617 CON phy_init 0 [CTL.SCF] ====> PhyDriver initialized!
+08:57:03.553781 CON phy_init 0 [NVIPC:YAML] nv_ipc_parse_yaml_node: PCAP msg_filter: enable all messages: 0x00-0xFF
+08:57:03.553787 CON phy_init 0 [NVIPC:YAML] nv_ipc_parse_yaml_node: PCAP cell_filter: enable all cells 0-255
+08:57:03.554016 CON phy_init 0 [NVIPC.DEBUG] nv_ipc_debug_open: prefix=nvipc fapi_type=1 nvipc_version=25.3.0 OK
+08:57:03.557787 CON 127 0 [NVIPC.DEBUG] pcap_shm_caching_thread_func: thread [nvipc_pcap_shm] started on CPU core [10] ...
+08:57:03.580722 CON 127 0 [NVIPC.DEBUG] Open PCAP logger: prefix=nvipc_pcap shm_caching_core=10 file_saving_core=10 max_data_size=8000 cache_size=512MB round_save_size=2048MB
+08:57:03.603330 CON phy_init 0 [NVIPC.SHM] nvipc server initialized
+08:57:03.603413 CON phy_init 0 [NVIPC.SHM] shm_ipc_open: forward_enable=-1 fw_max_msg_buf_count=1365 fw_max_data_buf_count=341
+08:57:03.603417 CON phy_init 0 [NVIPC.SHM] create_shm_nv_ipc_interface: OK. buf_size: cpu_msg=15000 cpu_data=576000 cpu_large=4096000
+08:57:03.603425 CON phy_init 0 [L2A.TRANSPORT] phy_mac_transport[0] created. phy_cell_map.size=0 mac_cell_map.size=0 mapped=false cell_num=1
+08:57:03.603425 CON phy_init 0 [L2A.TRANSPORT] init: loaded 1 nvipc instance, total_cell_num=1
+08:57:03.603452 CON phy_init 0 [L2A.MODULE] PHY_module: transport_num=1 total_cell_num=1
+08:57:03.605455 CON 131 0 [NVIPC.EFD] [nvipc][core 10 ] share event_fd thread info: sched_policy=0 sched_priority=0
+08:57:03.605530 CON 131 0 [NVIPC.EFD] [nvipc] Listening for nvipc client to connect ...
+Lookup table populated with 13104 entries
+08:57:03.933754 CON phy_main 0 [CTL.SCF] cuPHYController configured for 1 cells
+08:57:03.933755 CON phy_main 0 [CTL.SCF] ====> cuPHYController initialized, L1 is ready!
+08:57:03.933768 CON phy_main 0 [CTL.STARTUP_TIMES] {TI PERCENTAGE} <cuphycontroller main> Start Main:0.0,Parse Cuphycontroller YAML:0.0,Init nvlog:0.5,Cuda Set Device:5.3,Cuphy PTI Init:1.5,Init PHYDriver:83.9,Init cuphydriver:0.0,Make PHYDriverProxy:0.0,Init SCF FAPI:0.0,Create PHY_group:8.8,Start PHY_group:0.0, (total: 4308997.6us),
+
+08:57:03.933773 CON phy_main 0 [CTL.STARTUP_TIMES] {TI DURATION} <cuphycontroller main> Start Main:861.264,Parse Cuphycontroller YAML:659.904,Init nvlog:23137.168,Cuda Set Device:227016.368,Cuphy PTI Init:63389.632,Init PHYDriver:3613797.200,Init cuphydriver:0.480,Make PHYDriverProxy:5.248,Init SCF FAPI:0.576,Create PHY_group:379896.448,Start PHY_group:233.344,
+
+08:57:03.933775 CON phy_main 0 [CTL.STARTUP_TIMES] {TI TIMESTAMPS} <cuphycontroller main> Start Main:1774515419624758240,Parse Cuphycontroller YAML:1774515419625619504,Init nvlog:1774515419626279408,Cuda Set Device:1774515419649416576,Cuphy PTI Init:1774515419876432944,Init PHYDriver:1774515419939822576,Init cuphydriver:1774515423553619776,Make PHYDriverProxy:1774515423553620256,Init SCF FAPI:1774515423553625504,Create PHY_group:1774515423553626080,Start PHY_group:1774515423933522528,End Main:1774515423933755872,
+
+08:57:03.933795 CON 133 0 [L2A.MODULE] cell_update_thread_func: OAM thread affinity set to cpu core 10
+08:57:03.934455 CON msg_processing 0 [L2A.MODULE] Thread thread_func on CPU 16 initialized fmtlog
+08:57:04.380920 CON 131 0 [NVIPC.EFD] [nvipc] nvipc unix socket server connected
+08:57:04.380949 CON 131 0 [NVIPC.EFD] [nvipc] Received peer event_fd: 207
+08:57:04.551494 CON DlPhyDriver09 0 [DRV.WORKER] Thread DlPhyDriver09(worker_default) on CPU 9 initialized fmtlog
+08:57:04.551756 CON UlPhyDriver06 0 [DRV.WORKER] Thread UlPhyDriver06(worker_default) on CPU 6 initialized fmtlog
+08:57:04.552128 CON UlPhyDriver05 0 [DRV.WORKER] Thread UlPhyDriver05(worker_default) on CPU 5 initialized fmtlog
+08:57:04.552330 CON DlPhyDriver08 0 [DRV.WORKER] Thread DlPhyDriver08(worker_default) on CPU 8 initialized fmtlog
+08:57:04.552377 CON DlPhyDriver07 0 [DRV.WORKER] Thread DlPhyDriver07(worker_default) on CPU 7 initialized fmtlog
+08:57:04.581142 CON 131 0 [NVIPC.EFD] Share event_fd succeed: efd_tx=207, efd_rx=217
+08:57:04.581144 CON 131 0 [NVIPC.EFD] [nvipc] Listening for nvipc client to connect ...
+08:57:05.386019 WRN msg_processing 0 [SCF.PHY] on_msg: Incorrect msg length cell_id=0 msg_id=0x02 expected=589 received=597
+08:57:05.386027 CON msg_processing 0 [SCF.PHY] on_config_request: CONFIG.req received for cell_id=0 numTLVs=34 state=0
+08:57:05.386149 CON msg_processing 0 [SCF.PHY] update_phy_stat_configs_l1: PHY Cell Id = 51, M-Plane Id= 1
+08:57:05.389854 CON msg_processing 0 [DRV.PUSCH] tvStatPrms: PUSCH enableDeviceGraphLaunch=1 enableCsiP2Fapiv3 = 0 nMaxLdpcHetConfigs = 32
+08:57:05.389854 CON msg_processing 0 [DRV.PUSCH] Timeout values for wait kernels are 3000us and 3000us
+08:57:05.389857 CON msg_processing 0 [DRV.PUSCH] static_params.nMaxPrb: 273
+08:57:05.389857 CON msg_processing 0 [DRV.PUSCH] static_params.nMaxRx: 4
+08:57:05.392882 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 54.710 MiB for cuPHY PUSCH channel object (0x574454c6000).
+08:57:05.392883 CON msg_processing 0 [CUPHY.PUSCH_RX] PuschRx: Running with eqCoeffAlgo 3
+08:57:05.394209 CON msg_processing 0 [DRV.PUSCH] tvStatPrms: PUSCH enableDeviceGraphLaunch=1 enableCsiP2Fapiv3 = 0 nMaxLdpcHetConfigs = 32
+08:57:05.394209 CON msg_processing 0 [DRV.PUSCH] Timeout values for wait kernels are 3000us and 3000us
+08:57:05.394210 CON msg_processing 0 [DRV.PUSCH] static_params.nMaxPrb: 273
+08:57:05.394210 CON msg_processing 0 [DRV.PUSCH] static_params.nMaxRx: 4
+08:57:05.396823 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 54.710 MiB for cuPHY PUSCH channel object (0x574454ea000).
+08:57:05.396823 CON msg_processing 0 [CUPHY.PUSCH_RX] PuschRx: Running with eqCoeffAlgo 3
+08:57:05.398096 CON msg_processing 0 [DRV.PUSCH] tvStatPrms: PUSCH enableDeviceGraphLaunch=1 enableCsiP2Fapiv3 = 0 nMaxLdpcHetConfigs = 32
+08:57:05.398096 CON msg_processing 0 [DRV.PUSCH] Timeout values for wait kernels are 3000us and 3000us
+08:57:05.398096 CON msg_processing 0 [DRV.PUSCH] static_params.nMaxPrb: 273
+08:57:05.398096 CON msg_processing 0 [DRV.PUSCH] static_params.nMaxRx: 4
+08:57:05.400728 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 54.710 MiB for cuPHY PUSCH channel object (0x5744550e000).
+08:57:05.400728 CON msg_processing 0 [CUPHY.PUSCH_RX] PuschRx: Running with eqCoeffAlgo 3
+08:57:05.402682 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 3.344 MiB for cuPHY PUCCH channel object (0x57445397e00).
+08:57:05.403351 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 3.344 MiB for cuPHY PUCCH channel object (0x57445398c00).
+08:57:05.403817 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 3.344 MiB for cuPHY PUCCH channel object (0x57445399a00).
+08:57:05.404289 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 3.344 MiB for cuPHY PUCCH channel object (0x5744539a800).
+08:57:05.405737 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.060 MiB for cuPHY PRACH channel object (0x574469005c0).
+08:57:05.406021 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.060 MiB for cuPHY PRACH channel object (0x57446900940).
+08:57:05.413373 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 3.054 MiB for cuPHY SRS channel object (0x57446925800).
+08:57:05.419118 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 3.054 MiB for cuPHY SRS channel object (0x57446928900).
+08:57:05.424834 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 3.054 MiB for cuPHY SRS channel object (0x5744692e780).
+08:57:05.428825 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 98.130 MiB for cuPHY PDSCH channel object (0x5744546e400).
+08:57:05.431619 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 98.130 MiB for cuPHY PDSCH channel object (0x57447000c00).
+08:57:05.434251 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 98.130 MiB for cuPHY PDSCH channel object (0x57447002400).
+08:57:05.436935 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 98.130 MiB for cuPHY PDSCH channel object (0x57447003c00).
+08:57:05.439695 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 98.130 MiB for cuPHY PDSCH channel object (0x57447005400).
+08:57:05.442499 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 98.130 MiB for cuPHY PDSCH channel object (0x57447006c00).
+08:57:05.445202 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 98.130 MiB for cuPHY PDSCH channel object (0x57447008400).
+08:57:05.448297 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 98.130 MiB for cuPHY PDSCH channel object (0x57447009c00).
+08:57:05.451089 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 98.130 MiB for cuPHY PDSCH channel object (0x5744700b400).
+08:57:05.454062 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 98.130 MiB for cuPHY PDSCH channel object (0x5744700cc00).
+08:57:05.455453 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.001 MiB for cuPHY SSB channel object (0x5745d5a9700).
+08:57:05.455588 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.001 MiB for cuPHY SSB channel object (0x5745d5abd80).
+08:57:05.455667 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.001 MiB for cuPHY SSB channel object (0x5745d5ac100).
+08:57:05.455737 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.001 MiB for cuPHY SSB channel object (0x5745d5aba00).
+08:57:05.455802 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.001 MiB for cuPHY SSB channel object (0x5745d5ac480).
+08:57:05.455866 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.001 MiB for cuPHY SSB channel object (0x5745d5ac800).
+08:57:05.455933 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.001 MiB for cuPHY SSB channel object (0x5745d5acb80).
+08:57:05.455994 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.001 MiB for cuPHY SSB channel object (0x5745d5acf00).
+08:57:05.456056 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.001 MiB for cuPHY SSB channel object (0x5745d5ad280).
+08:57:05.456121 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.001 MiB for cuPHY SSB channel object (0x5745d5ad600).
+08:57:05.456230 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 1.607 MiB for cuPHY PDCCH channel object (0x57445d2e600).
+08:57:05.456362 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 1.607 MiB for cuPHY PDCCH channel object (0x57445d2e100).
+08:57:05.456470 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 1.607 MiB for cuPHY PDCCH channel object (0x57445d2f000).
+08:57:05.456575 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 1.607 MiB for cuPHY PDCCH channel object (0x57445d2f500).
+08:57:05.456845 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 1.607 MiB for cuPHY PDCCH channel object (0x57445d2fa00).
+08:57:05.456967 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 1.607 MiB for cuPHY PDCCH channel object (0x5745d9e0000).
+08:57:05.457115 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 1.607 MiB for cuPHY PDCCH channel object (0x5745d9e0500).
+08:57:05.457242 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 1.607 MiB for cuPHY PDCCH channel object (0x5745d9e0a00).
+08:57:05.457476 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 1.607 MiB for cuPHY PDCCH channel object (0x5745d9e0f00).
+08:57:05.457590 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 1.607 MiB for cuPHY PDCCH channel object (0x5745d9e1400).
+08:57:05.457692 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.093 MiB for cuPHY CSIRS channel object (0x574458a1280).
+08:57:05.457773 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.093 MiB for cuPHY CSIRS channel object (0x574458a1580).
+08:57:05.457828 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.093 MiB for cuPHY CSIRS channel object (0x574458a1880).
+08:57:05.457881 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.093 MiB for cuPHY CSIRS channel object (0x574458a1b80).
+08:57:05.457953 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.093 MiB for cuPHY CSIRS channel object (0x574458a1e80).
+08:57:05.457998 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.093 MiB for cuPHY CSIRS channel object (0x574458a2180).
+08:57:05.458047 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.093 MiB for cuPHY CSIRS channel object (0x574458a2480).
+08:57:05.458105 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.093 MiB for cuPHY CSIRS channel object (0x574458a2780).
+08:57:05.458163 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.093 MiB for cuPHY CSIRS channel object (0x574458a2a80).
+08:57:05.458208 CON msg_processing 0 [CUPHY.MEMFOOT] cuphyMemoryFootprint - GPU allocation: 0.093 MiB for cuPHY CSIRS channel object (0x574458a2d80).
+08:57:05.458217 CON msg_processing 0 [DRV.API] Update cell: mplane_id=1 dl_grid_sz=273 
+08:57:05.458218 CON msg_processing 0 [DRV.API] Update cell: mplane_id=1 ul_grid_sz=273 
+08:57:05.458222 CON msg_processing 0 [SCF.PHY] on_config_request: create_cell_configs for cell_id=0 phy_cell_id=51 returned error_code=0
+08:57:05.458232 CON msg_processing 0 [SCF.PHY] send_cell_config_response: Send CONFIG.response: cell_id=0 error_code=0x0
+08:57:05.458259 CON msg_processing 0 [L2A.TRANSPORT] wrapper: configured_cells_mask=0x1 expected_mask=0x1 all_cells_configured=true - all cells configured
+08:57:05.458410 WRN msg_processing 0 [SCF.PHY] on_msg: Incorrect msg length cell_id=0 msg_id=0x04 expected=8 received=16
+08:57:05.458411 CON msg_processing 0 [SCF.PHY] on_cell_start_request: Cell 0 Received START.request, sending START.response... phy_cell_id=51
+08:57:05.458536 CON msg_processing 0 [L2A.TRANSPORT] wrapper: configured_cells_mask=0x1 expected_mask=0x1 all_cells_configured=true - all cells configured
+08:57:05.460234 CON timer_thread 0 [L2A.TICK] Thread slot_indication_thread_sleep_method initialized fmtlog
+08:57:05.460236 CON timer_thread 0 [L2A.TICK] PTP Configs: gps_alpha: 0 gps_beta: 0
+08:57:05.460239 CON timer_thread 0 [L2A.TICK] Start time: tick=1774515425460235184, seconds since epoch = 1774515425, nanoseconds = 460235184
+08:57:05.460239 CON timer_thread 0 [L2A.TICK] FIRST tick scheduled for: tick=1774515428920000000, seconds since epoch = 1774515428, nanoseconds = 920000000
+08:57:08.920094 CON timer_thread 0 [L2A.MODULE] tick_received: tick_err 93440
+08:57:08.920095 ERR timer_thread 0 [AERIAL_L2ADAPTER_EVENT] [SCF.PHY] send_slot_error_indication: Late slot error encountered for SFN=0 slot=3
+08:57:08.920096 ERR timer_thread 0 [AERIAL_NVIPC_API_EVENT] [SCF.PHY] Send Err.ind for SFN 0.3 cell_id=0 msg_id=0x82 err_code=0x34
+08:57:08.951951 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 2.19 Slot Map 1 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F1S9S1 done = 1 current_time=1732810017134432,last_timeout_log_time=0
+08:57:09.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.00 Mbps    0 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 2000
+08:57:09.950412 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 102.19 Slot Map 101 cell index 0 Dyn index -1 setting as healthy!
+08:57:09.971936 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 104.19 Slot Map 103 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F103S9S1 done = 1 current_time=1732811036982976,last_timeout_log_time=1732810017134432
+08:57:10.920005 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 4000
+08:57:10.970411 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 204.19 Slot Map 203 cell index 0 Dyn index -1 setting as healthy!
+08:57:10.991941 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 206.19 Slot Map 205 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F205S9S1 done = 1 current_time=1732812056981280,last_timeout_log_time=1732811036982976
+08:57:11.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 6000
+08:57:11.990411 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 306.19 Slot Map 305 cell index 0 Dyn index -1 setting as healthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F51S9S1 done = 1 current_time=1732813076981920,last_timeout_log_time=1732812056981280
+08:57:12.011935 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 308.19 Slot Map 307 cell index 0 Dyn index -1 setting as unhealthy!
+08:57:12.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 8000
+08:57:13.010411 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 408.19 Slot Map 407 cell index 0 Dyn index -1 setting as healthy!
+08:57:13.031936 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 410.19 Slot Map 409 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F153S9S1 done = 1 current_time=1732814096978624,last_timeout_log_time=1732813076981920
+08:57:13.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 10000
+08:57:14.030413 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 510.19 Slot Map 509 cell index 0 Dyn index -1 setting as healthy!
+08:57:14.051935 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 512.19 Slot Map 511 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F255S9S1 done = 1 current_time=1732815116981088,last_timeout_log_time=1732814096978624
+08:57:14.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 12000
+08:57:15.050412 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 612.19 Slot Map 99 cell index 0 Dyn index -1 setting as healthy!
+08:57:15.071941 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 614.19 Slot Map 101 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F101S9S1 done = 1 current_time=1732816136978176,last_timeout_log_time=1732815116981088
+08:57:15.920005 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 14000
+08:57:16.070414 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 714.19 Slot Map 201 cell index 0 Dyn index -1 setting as healthy!
+08:57:16.091938 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 716.19 Slot Map 203 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F203S9S1 done = 1 current_time=1732817156977888,last_timeout_log_time=1732816136978176
+08:57:16.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 16000
+08:57:17.090411 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 816.19 Slot Map 303 cell index 0 Dyn index -1 setting as healthy!
+08:57:17.111938 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 818.19 Slot Map 305 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F49S9S1 done = 1 current_time=1732818176981344,last_timeout_log_time=1732817156977888
+08:57:17.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 18000
+08:57:18.110412 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 918.19 Slot Map 405 cell index 0 Dyn index -1 setting as healthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F151S9S1 done = 1 current_time=1732819196980608,last_timeout_log_time=1732818176981344
+08:57:18.131935 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 920.19 Slot Map 407 cell index 0 Dyn index -1 setting as unhealthy!
+08:57:18.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 20000
+08:57:19.130412 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 1020.19 Slot Map 507 cell index 0 Dyn index -1 setting as healthy!
+08:57:19.151940 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 1022.19 Slot Map 509 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F253S9S1 done = 1 current_time=1732820216976096,last_timeout_log_time=1732819196980608
+08:57:19.920005 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 22000
+08:57:20.150412 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 98.19 Slot Map 97 cell index 0 Dyn index -1 setting as healthy!
+08:57:20.171941 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 100.19 Slot Map 99 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F99S9S1 done = 1 current_time=1732821236978848,last_timeout_log_time=1732820216976096
+08:57:20.920005 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 24000
+08:57:21.170411 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 200.19 Slot Map 199 cell index 0 Dyn index -1 setting as healthy!
+08:57:21.191937 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 202.19 Slot Map 201 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F201S9S1 done = 1 current_time=1732822256980224,last_timeout_log_time=1732821236978848
+08:57:21.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 26000
+08:57:22.190414 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 302.19 Slot Map 301 cell index 0 Dyn index -1 setting as healthy!
+08:57:22.211933 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 304.19 Slot Map 303 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F47S9S1 done = 1 current_time=1732823276981088,last_timeout_log_time=1732822256980224
+08:57:22.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 28000
+08:57:23.210412 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 404.19 Slot Map 403 cell index 0 Dyn index -1 setting as healthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F149S9S1 done = 1 current_time=1732824296982112,last_timeout_log_time=1732823276981088
+08:57:23.231937 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 406.19 Slot Map 405 cell index 0 Dyn index -1 setting as unhealthy!
+08:57:23.920003 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 30000
+08:57:24.230412 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 506.19 Slot Map 505 cell index 0 Dyn index -1 setting as healthy!
+08:57:24.251935 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 508.19 Slot Map 507 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F251S9S1 done = 1 current_time=1732825316979360,last_timeout_log_time=1732824296982112
+08:57:24.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 32000
+08:57:25.250412 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 608.19 Slot Map 95 cell index 0 Dyn index -1 setting as healthy!
+08:57:25.271939 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 610.19 Slot Map 97 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F97S9S1 done = 1 current_time=1732826336977568,last_timeout_log_time=1732825316979360
+08:57:25.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 34000
+08:57:26.270414 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 710.19 Slot Map 197 cell index 0 Dyn index -1 setting as healthy!
+08:57:26.291936 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 712.19 Slot Map 199 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F199S9S1 done = 1 current_time=1732827356976960,last_timeout_log_time=1732826336977568
+08:57:26.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 36000
+08:57:27.290413 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 812.19 Slot Map 299 cell index 0 Dyn index -1 setting as healthy!
+08:57:27.311943 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 814.19 Slot Map 301 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F45S9S1 done = 1 current_time=1732828376982912,last_timeout_log_time=1732827356976960
+08:57:27.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 38000
+08:57:28.310414 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 914.19 Slot Map 401 cell index 0 Dyn index -1 setting as healthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F147S9S1 done = 1 current_time=1732829396978912,last_timeout_log_time=1732828376982912
+08:57:28.331940 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 916.19 Slot Map 403 cell index 0 Dyn index -1 setting as unhealthy!
+08:57:28.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 40000
+08:57:29.330412 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 1016.19 Slot Map 503 cell index 0 Dyn index -1 setting as healthy!
+08:57:29.351941 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 1018.19 Slot Map 505 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F249S9S1 done = 1 current_time=1732830416977152,last_timeout_log_time=1732829396978912
+08:57:29.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 42000
+08:57:30.350412 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 94.19 Slot Map 93 cell index 0 Dyn index -1 setting as healthy!
+08:57:30.371931 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 96.19 Slot Map 95 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F95S9S1 done = 1 current_time=1732831436978912,last_timeout_log_time=1732830416977152
+08:57:30.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 44000
+08:57:31.370413 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 196.19 Slot Map 195 cell index 0 Dyn index -1 setting as healthy!
+08:57:31.391940 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 198.19 Slot Map 197 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F197S9S1 done = 1 current_time=1732832456979776,last_timeout_log_time=1732831436978912
+08:57:31.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 46000
+08:57:32.390411 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 298.19 Slot Map 297 cell index 0 Dyn index -1 setting as healthy!
+08:57:32.411937 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 300.19 Slot Map 299 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F43S9S1 done = 1 current_time=1732833476978912,last_timeout_log_time=1732832456979776
+08:57:32.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 48000
+08:57:33.410411 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 400.19 Slot Map 399 cell index 0 Dyn index -1 setting as healthy!
+08:57:33.431940 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 402.19 Slot Map 401 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F145S9S1 done = 1 current_time=1732834496979328,last_timeout_log_time=1732833476978912
+08:57:33.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 50000
+08:57:34.430413 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 502.19 Slot Map 501 cell index 0 Dyn index -1 setting as healthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F247S9S1 done = 1 current_time=1732835516980640,last_timeout_log_time=1732834496979328
+08:57:34.451937 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 504.19 Slot Map 503 cell index 0 Dyn index -1 setting as unhealthy!
+08:57:34.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 52000
+08:57:35.450412 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 604.19 Slot Map 91 cell index 0 Dyn index -1 setting as healthy!
+08:57:35.471938 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 606.19 Slot Map 93 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F93S9S1 done = 1 current_time=1732836536980512,last_timeout_log_time=1732835516980640
+08:57:35.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 54000
+08:57:36.470412 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 706.19 Slot Map 193 cell index 0 Dyn index -1 setting as healthy!
+08:57:36.491937 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 708.19 Slot Map 195 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F195S9S1 done = 1 current_time=1732837556981440,last_timeout_log_time=1732836536980512
+08:57:36.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 56000
+08:57:37.490413 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 808.19 Slot Map 295 cell index 0 Dyn index -1 setting as healthy!
+08:57:37.511940 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 810.19 Slot Map 297 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F41S9S1 done = 1 current_time=1732838576976736,last_timeout_log_time=1732837556981440
+08:57:37.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 58000
+08:57:38.510413 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 910.19 Slot Map 397 cell index 0 Dyn index -1 setting as healthy!
+08:57:38.531933 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 912.19 Slot Map 399 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F143S9S1 done = 1 current_time=1732839596980256,last_timeout_log_time=1732838576976736
+08:57:38.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 60000
+08:57:39.530414 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 1012.19 Slot Map 499 cell index 0 Dyn index -1 setting as healthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F245S9S1 done = 1 current_time=1732840616981152,last_timeout_log_time=1732839596980256
+08:57:39.552014 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 1014.19 Slot Map 501 cell index 0 Dyn index -1 setting as unhealthy!
+08:57:39.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 62000
+08:57:40.550412 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 90.19 Slot Map 89 cell index 0 Dyn index -1 setting as healthy!
+08:57:40.571938 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 92.19 Slot Map 91 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F91S9S1 done = 1 current_time=1732841636981888,last_timeout_log_time=1732840616981152
+08:57:40.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 64000
+08:57:41.570411 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 192.19 Slot Map 191 cell index 0 Dyn index -1 setting as healthy!
+08:57:41.591935 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 194.19 Slot Map 193 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F193S9S1 done = 1 current_time=1732842656977056,last_timeout_log_time=1732841636981888
+08:57:41.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 66000
+08:57:42.590413 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 294.19 Slot Map 293 cell index 0 Dyn index -1 setting as healthy!
+08:57:42.611937 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 296.19 Slot Map 295 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F39S9S1 done = 1 current_time=1732843676975040,last_timeout_log_time=1732842656977056
+08:57:42.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 68000
+08:57:43.610411 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 396.19 Slot Map 395 cell index 0 Dyn index -1 setting as healthy!
+08:57:43.631941 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 398.19 Slot Map 397 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F141S9S1 done = 1 current_time=1732844696980000,last_timeout_log_time=1732843676975040
+08:57:43.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 70000
+08:57:44.630413 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 498.19 Slot Map 497 cell index 0 Dyn index -1 setting as healthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F243S9S1 done = 1 current_time=1732845716981312,last_timeout_log_time=1732844696980000
+08:57:44.651937 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 500.19 Slot Map 499 cell index 0 Dyn index -1 setting as unhealthy!
+08:57:44.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 72000
+08:57:45.650411 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 600.19 Slot Map 87 cell index 0 Dyn index -1 setting as healthy!
+08:57:45.671937 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 602.19 Slot Map 89 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F89S9S1 done = 1 current_time=1732846736981216,last_timeout_log_time=1732845716981312
+08:57:45.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 74000
+08:57:46.670413 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 702.19 Slot Map 189 cell index 0 Dyn index -1 setting as healthy!
+08:57:46.691933 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 704.19 Slot Map 191 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F191S9S1 done = 1 current_time=1732847756979296,last_timeout_log_time=1732846736981216
+08:57:46.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 76000
+08:57:47.690413 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 804.19 Slot Map 291 cell index 0 Dyn index -1 setting as healthy!
+08:57:47.711938 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 806.19 Slot Map 293 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F37S9S1 done = 1 current_time=1732848776982560,last_timeout_log_time=1732847756979296
+08:57:47.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 78000
+08:57:48.710411 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 906.19 Slot Map 393 cell index 0 Dyn index -1 setting as healthy!
+08:57:48.731935 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 908.19 Slot Map 395 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F139S9S1 done = 1 current_time=1732849796982752,last_timeout_log_time=1732848776982560
+08:57:48.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 80000
+08:57:49.730412 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 1008.19 Slot Map 495 cell index 0 Dyn index -1 setting as healthy!
+08:57:49.751939 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 1010.19 Slot Map 497 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F241S9S1 done = 1 current_time=1732850816978848,last_timeout_log_time=1732849796982752
+08:57:49.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 82000
+08:57:50.750412 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 86.19 Slot Map 85 cell index 0 Dyn index -1 setting as healthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F87S9S1 done = 1 current_time=1732851836977984,last_timeout_log_time=1732850816978848
+08:57:50.771934 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 88.19 Slot Map 87 cell index 0 Dyn index -1 setting as unhealthy!
+08:57:50.920003 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 84000
+08:57:51.770411 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 188.19 Slot Map 187 cell index 0 Dyn index -1 setting as healthy!
+08:57:51.791940 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 190.19 Slot Map 189 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F189S9S1 done = 1 current_time=1732852856979200,last_timeout_log_time=1732851836977984
+08:57:51.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 86000
+08:57:52.790412 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 290.19 Slot Map 289 cell index 0 Dyn index -1 setting as healthy!
+08:57:52.811937 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 292.19 Slot Map 291 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F35S9S1 done = 1 current_time=1732853876977888,last_timeout_log_time=1732852856979200
+08:57:52.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 88000
+08:57:53.810413 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 392.19 Slot Map 391 cell index 0 Dyn index -1 setting as healthy!
+08:57:53.831937 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 394.19 Slot Map 393 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F137S9S1 done = 1 current_time=1732854896979392,last_timeout_log_time=1732853876977888
+08:57:53.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 90000
+08:57:54.830411 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 494.19 Slot Map 493 cell index 0 Dyn index -1 setting as healthy!
+08:57:54.851934 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 496.19 Slot Map 495 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F239S9S1 done = 1 current_time=1732855916976832,last_timeout_log_time=1732854896979392
+08:57:54.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 92000
+08:57:55.850411 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 596.19 Slot Map 83 cell index 0 Dyn index -1 setting as healthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F85S9S1 done = 1 current_time=1732856936979808,last_timeout_log_time=1732855916976832
+08:57:55.871938 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 598.19 Slot Map 85 cell index 0 Dyn index -1 setting as unhealthy!
+08:57:55.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 94000
+08:57:56.870413 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 698.19 Slot Map 185 cell index 0 Dyn index -1 setting as healthy!
+08:57:56.891934 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 700.19 Slot Map 187 cell index 0 Dyn index -1 setting as unhealthy!
+08:57:56.920003 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 96000
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F187S9S1 done = 1 current_time=1732857956979328,last_timeout_log_time=1732856936979808
+08:57:57.890413 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 800.19 Slot Map 287 cell index 0 Dyn index -1 setting as healthy!
+08:57:57.911938 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 802.19 Slot Map 289 cell index 0 Dyn index -1 setting as unhealthy!
+08:57:57.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 98000
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F33S9S1 done = 1 current_time=1732858976980832,last_timeout_log_time=1732857956979328
+08:57:58.910411 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 902.19 Slot Map 389 cell index 0 Dyn index -1 setting as healthy!
+08:57:58.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 100000
+08:57:58.931936 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 904.19 Slot Map 391 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F135S9S1 done = 1 current_time=1732859996981344,last_timeout_log_time=1732858976980832
+08:57:59.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 102000
+08:57:59.930413 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 1004.19 Slot Map 491 cell index 0 Dyn index -1 setting as healthy!
+08:57:59.951941 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 1006.19 Slot Map 493 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F237S9S1 done = 1 current_time=1732861016980480,last_timeout_log_time=1732859996981344
+08:58:00.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 104000
+08:58:00.950412 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 82.19 Slot Map 81 cell index 0 Dyn index -1 setting as healthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F83S9S1 done = 1 current_time=1732862036980960,last_timeout_log_time=1732861016980480
+08:58:00.971935 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 84.19 Slot Map 83 cell index 0 Dyn index -1 setting as unhealthy!
+08:58:01.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 106000
+08:58:01.970411 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 184.19 Slot Map 183 cell index 0 Dyn index -1 setting as healthy!
+08:58:01.991940 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 186.19 Slot Map 185 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F185S9S1 done = 1 current_time=1732863056980288,last_timeout_log_time=1732862036980960
+08:58:02.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 108000
+08:58:02.990411 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 286.19 Slot Map 285 cell index 0 Dyn index -1 setting as healthy!
+08:58:03.011934 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 288.19 Slot Map 287 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F31S9S1 done = 1 current_time=1732864076977952,last_timeout_log_time=1732863056980288
+08:58:03.920004 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.04 Mbps   50 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 110000
+08:58:04.010411 ERR UlPhyDriver05 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 388.19 Slot Map 387 cell index 0 Dyn index -1 setting as healthy!
+08:58:04.031941 ERR UlPhyDriver06 0 [AERIAL_CUPHY_API_EVENT] [DRV.FUNC_UL] SFN 390.19 Slot Map 389 cell index 0 Dyn index -1 setting as unhealthy!
+3849 Cell 0 Order kernel sem_idx_rx 0 last_sem_idx_rx 0 sem_idx_order 0 last_sem_idx_order 0 PUSCH PRBs 0/0 PRACH PRBs 0/576. No packet received timeout after 3000000 ns F133S9S1 done = 1 current_time=1732865096981728,last_timeout_log_time=1732864076977952
+08:58:04.920003 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.01 Mbps   11 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 112000
+08:58:05.920003 CON timer_thread 0 [SCF.PHY] Cell  0 | DL    0.00 Mbps    0 Slots | UL    0.00 Mbps    0 Slots CRC   0 (     0) | Tick 114000
+08:58:06.191502 ERR timer_thread 0 [AERIAL_NVIPC_API_EVENT] [L2A.TRANSPORT] tx_alloc: NVIPC memory pool is full: transport_id=0
