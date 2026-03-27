@@ -242,7 +242,13 @@ If the integration is successful, OAI will connect to L1 via `nvipc`. It will su
 [NR_MAC] I Frame.Slot 640.0
 ```
 This confirms that the OAI MAC layer is actively synchronized with the Aerial Physical layer. 
+
+### LOG:
+oai-gnb-aerial:
 ![alt text](images2/image.png)
+
+nv-cubb:
+![alt text](images2/image2.png)
 
 ---
 
