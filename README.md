@@ -6,9 +6,7 @@ This repository contains essential documentation and SOPs for integrating **NVID
 
 ## 📑 Table of Contents
 
-- [**Kernel & Environment Setup**](guide-kernel-setup-troubleshooting.md) - Vital host-level optimizations (Hugepages, GRUB parameters, RT Kernel).
 - [**OAI-Aerial Integration Guide**](Aerial_OAI_Integration_Guide.md) - *Primary Guide:* Step-by-step FAPI split integration using Docker Compose.
-- [**Docker & Troubleshooting**](guide-docker-troubleshooting.md) - Common fixes for container networking, image registry, and compilation bugs.
 
 ---
 
