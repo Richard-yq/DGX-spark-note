@@ -86,14 +86,16 @@ flowchart TD
   <strong>⚠️ IMPORTANT:</strong> The integration process has not yet started. The following checklist outlines the critical steps and considerations required to successfully integrate Aerial RAN with the Pegatron RU.
 </div>
 
-- [ ] **Multiplexed Fronthaul Port:** Note that the Pegatron RU multiplexes all planes (C/U/S/M/SSH) on a single physical fiber port, differentiating them by VLAN IDs (e.g., C/U-plane: VLAN 3, M-plane: VLAN 4, S-plane: VLAN 2).
+- [ ] **Multiplexed Fronthaul Port:** Note that the Pegatron RU multiplexes all planes (C/U/S/M/SSH) on a single physical fiber port, differentiating them by VLAN IDs.
 - [ ] **Hardware Connection:** Complete the physical wiring of the hardware equipment (DGX) to the Fronthaul to realize C3 connectivity.
 - [ ] **Network IP & VLAN Planning:** Define the specific IPs, VLANs, and NIC names for the DU host environment. 
-  - *Caution:* Ensure the host IP does **not** conflict with the Pegatron RU's IP address.
+  - *Caution 1:* Ensure the host IP does **not** conflict with the Pegatron RU's IP address.
+  - *Caution 2:* It is highly recommended to allocate **new, isolated VLAN IDs** (e.g., VLAN `1028`, `103`, `104`) rather than reusing old VLANs (e.g., from legacy JURA setups) to prevent potential throughput drops and conflicts.
 - [ ] **MAC Address Validation:** Obtain the MAC address of the Pegatron RU. These parameters must be updated in the OAI or Aerial configuration files.
-- [ ] **PTP Synchronization (S-Plane):** Ensure that PTP services (e.g., `ptp4l`, `phc2sys`) are correctly running and synchronized at the underlying Linux OS level (often bound to VLAN 2).
-- [ ] **Timing Window:** **(Critical Blind Spot)** The Timing Window parameters for the Pegatron RU differ from older models. It is imperative to acquire the exact correct values so that the NVIDIA Aerial L1 can successfully communicate with the RU.
-- [ ] **DPDK & Fronthaul Script Adaptation:** A typical script (like `oaipega.sh`) is used for DPDK VF setup, CPU power profiles, and MTU settings. *Note:* Because we are using Aerial RAN, the network optimization script may differ from standard OAI setups. Ensure it perfectly matches the Aerial L1 DPDK requirements.
+- [ ] **PTP Synchronization (S-Plane):** Ensure that PTP services (`ptp4l`, `phc2sys`) are correctly running and synchronized.
+  - *Verification:* The `phc2sys` status should show an `offset` within **±100**, and the `ptp4l` status should show an `rms` within **±100**.
+- [ ] **Timing Window:** **(Critical Blind Spot)** The Timing Window parameters for the Pegatron RU differ from older models. It is imperative to acquire the exact correct values so that the NVIDIA Aerial L1 can successfully communicate with the RU.(Modify in Aerial L1)
+- [ ] **DPDK & Fronthaul Script Adaptation:** A typical script (like `oaipega.sh`) is used for DPDK VF setup, CPU power profiles, and MTU settings. *Note:* Because we are using Aerial RAN, the network optimization script may differ from standard OAI setups. Ensure it perfectly matches the Aerial L1 DPDK requirements.(Modify in Aerial L1)
 - [ ] **NETCONF / Netopeer2 Configurations:** Prepare the required XML files (`ietf-interface-processing-element.xml` and `o-ran-uplane-conf_...xml`) to configure the RU via its M-plane.
 
 ## Access Method (if any)
@@ -212,20 +214,21 @@ Once the RU reboots, use the NETCONF protocol via `netopeer2-cli` to push the O-
 Before launching Aerial L1 and the gNB, the host machine's NICs must be optimized for real-time performance and bound to DPDK.
 
 1. **Execute the DPDK & Network Setup Script:**
-   You will run a network setup script (similar to standard OAI's `oaipega.sh`, but adapted for Aerial L1 requirements). This script typically handles:
+   You will run a network setup script (similar to standard OAI's `oaipega.sh`, but adapted for Aerial L1 requirements). This script ensures the host environment is correctly optimized before L1 execution. It handles:
    *   Setting CPU power profiles to `realtime`.
-   *   Increasing ring buffers and setting MTU to `9000` (Jumbo frames).
-   *   Creating SR-IOV Virtual Functions (VFs) on the physical NIC with the designated MAC address and U-plane VLAN.
+   *   Increasing ring buffers to `4096` and setting MTU to `9600` (Jumbo frames).
+   *   Creating Virtual Functions (VFs) on the physical NIC (e.g., using `sriov_numvfs` to create `NUM_VFS=2`) with the designated MAC address and U-plane VLAN.
    *   Binding the VFs to the `vfio-pci` driver for DPDK compatibility.
    ```bash
-   sh setup_aerial_dpdk.sh # Replace with your actual Aerial DPDK setup script. DO NOT blindly use the standard oaipega.sh.
+    sh setup_aerial_dpdk.sh # Replace with your actual Aerial DPDK setup script. DO NOT blindly use the standard oaipega.sh.
    ```
+   > *Note: Modify the variables (`NIC`, `VF_MAC`, `VF_VLAN`, `VLAN_ID_MGMT`) at the top of the script according to your specific hardware setup.*
 
 #### **Phase 4: Launching Aerial L1 and OAI gNB**
 Because we are using NVIDIA Aerial L1 integrated with the OAI gNB, we do not launch the `nr-softmodem` binary directly. Instead, the deployment relies on Docker Compose.
 
-1. **Verify Configurations:**
-   Ensure `cuphycontroller_P5G_WNC_DGX.yaml` (L1) and `gnb-vnf.sa.band78.273prb.aerial.conf` (OAI) have the exact Pegatron RU MAC addresses and VLAN parameters correctly mapped.
+1. **Verify OAI & Aerial Configurations:**
+   *   **Aerial L1 Configuration:** Ensure `cuphycontroller_P5G_WNC_DGX.yaml` has the exact Pegatron RU MAC addresses, VLAN parameters, DPDK parameters, and Fronthaul Timing Windows correctly mapped. **Crucial Note:** Aerial L1 parameters MUST be configured in the NVIDIA YAML file. If you attempt to modify L1-specific settings (like Timing Windows or DPDK bindings) inside the OAI VNF config, **they will be completely ignored**.
 
 2. **Start the Integrated Setup:**
    For comprehensive details on launching the containers, refer to the [Aerial OAI Integration Guide](./Aerial_OAI_Integration_Guide.md).
