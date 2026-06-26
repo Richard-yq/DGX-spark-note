@@ -149,16 +149,28 @@ sudo nano /etc/docker/daemon.json
 sudo systemctl restart docker
 ```
 
-### Step 5：驗證
+### Step 5：修改 [run_aerial.sh](file:///home/admin/aerial-cuda-accelerated-ran/cuPHY-CP/container/run_aerial.sh) 中的 GPU_FLAG
 
-```bash
-docker run --platform=linux/arm64 \
-    --privileged --gpus all --rm \
-    nvcr.io/nvidia/aerial/aerial-cuda-accelerated-ran:26-1-cubb \
-    echo "ok"
+由於 `nvidia-container-runtime` 改為 `legacy` 模式，使用 `--gpus all` 直接呼叫 Container Hook 可能會報錯：
+```
+docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error running prestart hook #0: exit status 1, stdout: , stderr: Using requested mode 'cdi'
+invoking the NVIDIA Container Runtime Hook directly (e.g. specifying the docker --gpus flag) is not supported. Please use the NVIDIA Container Runtime (e.g. specify the --runtime=nvidia flag) instead
 ```
 
-接著執行原始腳本：
+因此需要將 `cuPHY-CP/container/run_aerial.sh` 中的 GPU flag 改為使用 `--runtime=nvidia`：
+
+```bash
+# 修改前
+GPU_FLAG="--gpus all"
+
+# 修改後
+# GPU_FLAG="--gpus all"
+GPU_FLAG="--runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all"
+```
+
+### Step 6：驗證與執行
+
+執行原始腳本：
 
 ```bash
 ./cuPHY-CP/container/run_aerial.sh
@@ -200,3 +212,4 @@ grep -c "nvidia-cuda-mps" /var/run/cdi/nvidia.yaml && \
 | `/var/run/cdi/nvidia.yaml` | 移除 `nvidia-cuda-mps-control` 及 `nvidia-cuda-mps-server` 掛載條目 |
 | `/etc/nvidia-container-runtime/config.toml` | `mode = "auto"` → `mode = "legacy"` |
 | `/etc/docker/daemon.json` | 新增 `"default-runtime": "nvidia"` |
+| [run_aerial.sh](file:///home/admin/aerial-cuda-accelerated-ran/cuPHY-CP/container/run_aerial.sh) | `GPU_FLAG="--gpus all"` → `GPU_FLAG="--runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all"` |
